@@ -116,7 +116,11 @@ const FlowerBoxBuilder = () => {
               <h3 className="text-lg font-semibold mb-3 text-gray-800">Box Size</h3>
               <div className="space-y-2">
                 {boxSizes.map((size) => (
-                  <label key={size.value} className="relative flex items-center space-x-2 cursor-pointer bg-gray-100 p-2 rounded-md hover:bg-gray-200 transition-colors">
+                  <label key={size.value} className={`relative flex items-center space-x-2 cursor-pointer p-2 rounded-md transition-colors ${
+                    boxSize === size.value 
+                      ? 'border-pink-500 bg-pink-50 border-2' 
+                      : 'bg-gray-100 hover:bg-gray-200'
+                  }`}>
                     {/* Free Delivery Badge */}
                     {(size.value === '50' || size.value === '100') && (
                       <div className="absolute -top-1 -right-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg transform rotate-3 z-10 shake-animation">
@@ -176,7 +180,11 @@ const FlowerBoxBuilder = () => {
             <h3 className="text-xl font-semibold mb-4 text-gray-800">Select Your Flowers</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
               {flowerTypes.map((flower) => (
-                <div key={flower.id} className="bg-white border-2 border-gray-200 rounded-xl p-3 hover:border-pink-300 transition-all duration-200 hover:shadow-lg">
+                <div key={flower.id} className={`bg-white border-2 rounded-xl p-3 transition-all duration-200 hover:shadow-lg ${
+                  totalFlowers > 0 && selectedFlowers[flower.id] > 0
+                    ? 'border-pink-500 shadow-lg !bg-pink-50'
+                    : 'border-gray-200 hover:border-pink-300'
+                }`}>
                   <div className="text-center mb-3">
                     <div className="text-3xl mb-1">{flower.image}</div>
                     <h4 className="font-medium text-sm text-gray-800">{flower.name}</h4>
