@@ -101,8 +101,7 @@ const FlowerBoxBuilder = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-6 bg-gradient-to-br from-pink-50 to-purple-50 min-h-screen">
-      <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-6">
           <h1 className="text-3xl font-bold mb-2">Create Your Perfect Flower Box</h1>
@@ -385,8 +384,8 @@ const FlowerBoxBuilder = () => {
             </div>
           </div>
         </div>
-      </div>
     </div>
+    
   );
 };
 
